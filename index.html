@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internship Task Set 2</title>
+    <style>
+        body{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript Function Tasks - Output Below</h2>
+
+    <script>
+        // 1. Function to filter out negative numbers
+        document.write("<b>Task 1: Filter out negative numbers</b><br>");
+        function filterNegatives(arr) {
+            return arr.filter(num => num >= 0);
+        }
+        let numbers = [5, -3, 8, -1, 0, 12];
+        document.write("Original Array: " + numbers + "<br>");
+        document.write("Filtered Array: " + filterNegatives(numbers) + "<br><br>");
+
+        // 2. Function to get difference from 13 or double absolute difference
+        document.write("<b>Task 2: Difference with 13 (double if greater)</b><br>");
+        function diffFrom13(num) {
+            if (num > 13) {
+                return 2 * Math.abs(num - 13);
+            } else {
+                return 13 - num;
+            }
+        }
+        let numInput = 20;
+        document.write("Input: " + numInput + "<br>");
+        document.write("Result: " + diffFrom13(numInput) + "<br><br>");
+
+        // 3. Fibonacci series function
+        document.write("<b>Task 3: Fibonacci Series</b><br>");
+        function fibonacci(n) {
+            let series = [0, 1];
+            for (let i = 2; i < n; i++) {
+                series.push(series[i - 1] + series[i - 2]);
+            }
+            return series.slice(0, n);
+        }
+        let fibCount = 10;
+        document.write("First " + fibCount + " Fibonacci Numbers: " + fibonacci(fibCount).join(", ") + "<br><br>");
+
+        // 4. Sum of multiples of 3 and 5 under 1000
+        document.write("<b>Task 4: Sum of Multiples of 3 and 5 under 1000</b><br>");
+        function sumMultiples() {
+            let sum = 0;
+            for (let i = 0; i < 1000; i++) {
+                if (i % 3 === 0 || i % 5 === 0) {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+        document.write("Sum: " + sumMultiples() + "<br><br>");
+
+        // 5. Return cube of a number using function object
+        document.write("<b>Task 5: Cube using Function Object</b><br>");
+        let cube = new Function("num", "return num * num * num;");
+        let cubeInput = 4;
+        document.write("Cube of " + cubeInput + " is: " + cube(cubeInput) + "<br>");
+    </script>
+</body>
+</html>
